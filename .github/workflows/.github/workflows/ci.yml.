@@ -29,3 +29,17 @@ github-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 env:
 NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 ○ NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID
+
+
+
+build:
+needs: test
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v2
+- name: Instalar Node.js
+uses: actions/setup-node@v2
+with:
+node-version: '14'
+- name: Construir app
+2. run: echo "️ Construyendo la app..."
